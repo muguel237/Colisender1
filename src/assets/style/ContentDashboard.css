@@ -1,0 +1,83 @@
+@keyframes bounce-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.transition-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  animation: bounce-arrow 1.6s infinite ease-in-out;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+  animation: none;
+}
+
+@media (min-width: 768px) {
+  .custom-step-row {
+    height: 380px;
+    align-items: stretch;
+  }
+
+  .card-bottom {
+    transform: translateY(80px);
+    transition: all 0.5s ease-out;
+  }
+
+  .card-middle {
+    transform: translateY(40px);
+    transition: all 0.5s ease-out;
+  }
+
+  .card-top {
+    transform: translateY(0px);
+    transition: all 0.5s ease-out;
+  }
+
+  .show-steps .card-bottom {
+    transform: translateY(80px) !important;
+    opacity: 1;
+  }
+  .show-steps .card-middle {
+    transform: translateY(40px) !important;
+    opacity: 1;
+  }
+  .show-steps .card-top {
+    transform: translateY(0px) !important;
+    opacity: 1;
+  }
+}
+
+.style-icon-box {
+  width: 60px;
+  height: 60px;
+}
+
+.steps-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.steps-wrapper.show-steps {
+  max-height: 1200px;
+  opacity: 1;
+}
+
+.step-card {
+  opacity: 0;
+  max-width: 350px;
+}
+
+.show-steps .delay-1 {
+  transition-delay: 0.15s;
+}
+.show-steps .delay-2 {
+  transition-delay: 0.3s;
+}

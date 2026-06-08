@@ -1,0 +1,79 @@
+
+.bg-light-cocolis {
+  background-color: #f8fafc;
+}
+.text-primary-cocolis {
+  color: #0070f3 !important; 
+}
+
+.btn-primary-cocolis {
+  background-color: #0070f3;
+  color: #ffffff;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary-cocolis:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-primary-cocolis:disabled {
+  background-color: #a0cfff;
+  cursor: not-allowed;
+}
+.style-login-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+.cocolis-input-field {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #e2e8f0;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.cocolis-input-field:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
+  background-color: #ffffff;
+}
+.eye-btn-login {
+  border: 1.5px solid #e2e8f0;
+  border-left: none;
+  cursor: pointer;
+  padding-right: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-group:focus-within .cocolis-input-field {
+  border-color: #0070f3;
+}
+
+.input-group:focus-within .eye-btn-login {
+  border-color: #0070f3;
+}
+
+.cocolis-login-checkbox {
+  cursor: pointer;
+}
+
+.cocolis-login-checkbox:checked {
+  background-color: #0070f3;
+  border-color: #0070f3;
+}
+
+.text-link-hover:hover {
+  text-decoration: underline !important;
+}
+.py-2-5 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.fw-extrabold {
+  font-weight: 800;
+}

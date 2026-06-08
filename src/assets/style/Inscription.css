@@ -1,0 +1,60 @@
+
+.style-register-card {
+  padding: 10px;
+}
+.cocolis-input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 0.95rem;
+  border: 1px solid #dcdcdc;
+  color: #212529;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.cocolis-input::placeholder {
+  color: #adb5bd;
+  opacity: 0.8;
+}
+.cocolis-input:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+.eye-toggle-btn {
+  border: 1px solid #dcdcdc;
+}
+.cocolis-checkbox {
+  border-color: #ced4da;
+  cursor: pointer;
+}
+
+.cocolis-checkbox:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+.py-2-5 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.separator-text {
+  font-size: 0.75rem;
+  color: #adb5bd;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.fw-extrabold {
+  font-weight: 800;
+}
+.badge {
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+  border-color: #ced4da !important;
+}
