@@ -16,8 +16,7 @@ export default function HeaderDashboard() {
       <div className="container">
         <div className="d-flex justify-content-between align-items-center py-2">
           
-          <h2 
-            
+          <h2  className="text-primary"
           >
             Colisender
           </h2>

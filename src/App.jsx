@@ -4,8 +4,8 @@ import Inscription from "./assets/code/Inscription.jsx";
 import Terms from "./assets/code/Terms.jsx";
 import Login from "./assets/code/login.jsx";
 import Forgot from "./assets/code/Forgot.jsx";
-import User from "./assets/code/UserDashboard.jsx";
 import UserD from "./assets/code/UserDashboard.jsx";
+import UserDashboard from "./assets/code/UserDashboard.jsx";
 import Navigation from "./assets/code/Navigation.jsx";
 
 function App() {
@@ -15,14 +15,8 @@ function App() {
     <BrowserRouter>
 
       <Routes>
-         <Route
-          path="/Navigation"
-          element={<Navigation />}/>
-          <Route
-          path="/"
-          element={<UserD />}/>
- 
-        {/* <Route
+        
+        <Route
           path="/"
           element={<Dashboard />}
         />
@@ -42,7 +36,14 @@ function App() {
           path="/Forgot"
           element={<Forgot />}
         />
-       <Route path="/Dashboard" element={<UserDashboard/>}/> */}
+       <Route path="/Dashboard" element={<UserDashboard/>}/>
+        <Route
+          path="/Navigation"
+          element={<Navigation />}/>
+          <Route
+          path="/UserDashboard"
+          element={<UserD />}/>
+ 
       </Routes>
 
     </BrowserRouter>

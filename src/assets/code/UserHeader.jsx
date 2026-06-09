@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { 
-  FaTruck, FaBars, FaTimes, FaUserCircle, 
-  FaSignOutAlt, FaPlusCircle, FaInbox, 
-  FaMapMarkedAlt, FaQrcode 
+  FaBars, FaTimes, FaUserCircle, 
+  FaSignOutAlt, FaPlusCircle, FaBox, FaQrcode, 
+  FaListUl, FaMapMarkedAlt, FaComments, FaBell 
 } from "react-icons/fa";
 
 export default function UserHeader({ setPage }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activePage, setActivePage] = useState(null);
+  const [activePage, setActivePage] = useState("annonces");
 
   const handleNavigation = (page) => {
     setActivePage(page);
@@ -29,39 +29,47 @@ export default function UserHeader({ setPage }) {
             Colisender
           </h2>
 
-          <button 
-            className="navbar-toggler d-md-none border-0 p-2 text-secondary" 
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-          </button>
+          <div className="d-flex align-items-center gap-2">
+            <button 
+              className="navbar-toggler d-md-none border-0 p-2 text-secondary" 
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+            </button>
+          </div>
           
           <div className={`
             d-md-flex gap-2 align-items-center
             ${isOpen ? "d-flex flex-column position-absolute top-100 start-0 w-100 bg-white p-3 border-top shadow-sm z-3" : "d-none"}
           `}>
     
-            <button className={getBtnClass("envoyer")} onClick={() => handleNavigation("envoyer")}>
-              <FaPlusCircle size={14} /> Envoyer
+            <button className={getBtnClass("publier")} onClick={() => handleNavigation("publier")}>
+              <FaPlusCircle size={14} /> Publier
             </button>
             
-            <button className={getBtnClass("recevoir")} onClick={() => handleNavigation("recevoir")}>
-              <FaInbox size={14} /> Recevoir
+            <button className={getBtnClass("annonces")} onClick={() => handleNavigation("annonces")}>
+              <FaListUl size={14} /> annonces
             </button>
 
-            <button className={getBtnClass("trajets")} onClick={() => handleNavigation("trajets")}>
-              <FaTruck size={14} /> Mes trajets
+            <button className={getBtnClass("mes-colis")} onClick={() => handleNavigation("mes-colis")}>
+              <FaBox size={14} /> Mes colis
             </button>
 
             <button className={getBtnClass("suivi")} onClick={() => handleNavigation("suivi")}>
               <FaMapMarkedAlt size={14} /> Suivi
             </button>
 
-            {/* Nouveau bouton Scan ajouté */}
-            <button className={getBtnClass("scanner")} onClick={() => handleNavigation("scanner")}>
-              <FaQrcode size={14} /> Scanner QR code
+            <button className={getBtnClass("chat")} onClick={() => handleNavigation("chat")}>
+              <FaComments size={14} /> Chat
             </button>
 
+            <button className={getBtnClass("scanner")} onClick={() => handleNavigation("scanner")}>
+              <FaQrcode size={14} /> Scanner
+            </button>
+             <button className="btn btn-sm btn-link text-secondary position-relative p-2">
+              <FaBell size={20} />
+             
+            </button>
             <div className="vr mx-2 d-none d-md-block text-secondary"></div>
 
             <button className="btn btn-sm btn-light text-secondary rounded-pill px-3 fw-semibold d-flex align-items-center gap-2">

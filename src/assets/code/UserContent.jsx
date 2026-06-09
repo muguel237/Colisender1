@@ -11,7 +11,7 @@ export default function UserContent({ activePage }) {
           </div>
         );
 
-      case "envoyer":
+      case "publier":
         return <Send />; // Appel de votre formulaire que nous avons créé
       case "scanner": return <Scanner />;
       case "suivi":

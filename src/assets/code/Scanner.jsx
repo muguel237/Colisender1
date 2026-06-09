@@ -23,6 +23,7 @@ export default function Scanner() {
       alert("Erreur lors de la validation de la livraison.");
     }
   };
+
 return (
     <div className="container py-5 text-center">
       <h3 className="mb-4">Scanner le code QR de livraison</h3>

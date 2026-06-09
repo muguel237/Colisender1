@@ -8,7 +8,6 @@ import {
   FaTimes, 
   FaUserCircle 
 } from "react-icons/fa";
-
 export default function Send() {
   const [formData, setFormData] = useState({
     villeDepart: "",
@@ -74,9 +73,7 @@ export default function Send() {
         <div className="col-lg-8">
           <div className="card border-0 shadow-lg rounded-4 p-4 p-md-5">
             <h2 className="fw-bold text-dark mb-4">Publier une annonce</h2>
-            
             <form onSubmit={handleSubmit}>
-              {/* Section Itinéraire */}
               <div className="mb-4">
                 <h5 className="text-primary mb-3"><FaMapMarkerAlt /> Itinéraire</h5>
                 <div className="row g-3">

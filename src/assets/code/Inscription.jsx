@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import "../style/Inscription.css";
-
+import { useNavigate } from "react-router-dom";
 export default function Inscription() {
   // On gère maintenant 3 étapes : 1 = Profil, 2 = OTP, 3 = Identité
   const [step, setStep] = useState(1); 
-
+const navigate = useNavigate();
   const API_BASE_URL = "http://localhost:8080/api/auth";
 
   const [formData, setFormData] = useState({
@@ -258,6 +258,7 @@ export default function Inscription() {
 
       if (response.ok) {
         alert("Inscription réussie ! Votre compte est en attente de vérification.");
+        navigate("/login");
       } else {
         // Affiche le message d'erreur venant du backend (ex: "Nom ne correspond pas")
         alert(result.message || "Une erreur est survenue lors de l'inscription.");
