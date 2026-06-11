@@ -36,7 +36,7 @@ function App() {
           path="/Forgot"
           element={<Forgot />}
         />
-       <Route path="/Dashboard" element={<UserDashboard/>}/>
+       <Route path="/Dashboard" element={<Dashboard/>}/>
         <Route
           path="/Navigation"
           element={<Navigation />}/>

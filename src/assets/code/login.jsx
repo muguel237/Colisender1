@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "../style/login.css";
-
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [loginData, setLoginData] = useState({
     email: "",
     mot_de_passe: "",
     rememberMe: false,
   });
+  const navigate = useNavigate();
 const API_BASE_URL = "http://localhost:8080/api/auth";
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,7 +25,7 @@ const API_BASE_URL = "http://localhost:8080/api/auth";
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/login`, {//envoie du mot de passe et de l'email a dival
+      const response = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,14 +36,19 @@ const API_BASE_URL = "http://localhost:8080/api/auth";
         }),
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-        }
-        
-        alert("Connexion réussie !");
-        
+      // Après (ce que tu mets) :
+if (response.ok) {
+  const data = await response.json();
+  // Sauvegarder l'userId — utilisé par toutes les pages authentifiées
+  if (data.userId) {
+    localStorage.setItem("userId", data.userId);
+  }
+  if (data.token) {
+    localStorage.setItem("token", data.token);
+  }
+  alert("Connexion réussie !");
+  navigate("/UserDashboard");
+
       } else {
         const errorData = await response.json().catch(() => ({}));
         alert(errorData.message || "Identifiants incorrects ou problème de compte.");
